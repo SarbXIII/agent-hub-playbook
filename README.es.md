@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.png">
+  <img src="assets/banner-light.png" alt="agent-hub-playbook — un modelo operativo para asistentes de IA que coordinan trabajo real en varios proyectos">
+</picture>
+
 # agent-hub-playbook
 
 Un modelo operativo práctico para asistentes de IA que coordinan trabajo real en varios proyectos — y no se degradan según crecen.
@@ -21,6 +26,11 @@ No es un framework. No hay nada que instalar. Es una especificación, un juego d
 | **Lecciones** | Fecha · error · causa raíz · acción · estado · evidencia | Un error que vuelve es una regresión, no mala suerte |
 | **Cierre** | Medir contexto → chequeo de consistencia → traspaso → rotación | Una sesión nueva arranca de un estado escrito, no de releer el historial |
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/model-dark.png">
+  <img src="assets/model-light.png" alt="El hub despacha una tarea con criterio de aceptación a sesiones de proyecto aisladas; cada sesión devuelve estado y una lección; los contextos no se mezclan y solo hay un gerente vivo">
+</picture>
+
 La especificación completa — principios, fases, entrevista, anti-patrones, protocolo operativo, plantillas — está en **[docs/es/modelo.md](docs/es/modelo.md)** (español) y **[docs/model.md](docs/model.md)** (inglés).
 
 ---
@@ -32,6 +42,11 @@ La especificación completa — principios, fases, entrevista, anti-patrones, pr
 3. **Crea dos agentes** desde las plantillas: un explorador de solo lectura y un revisor sin herramienta shell. Comprueba que el revisor no puede ejecutar nada de verdad.
 4. **Añade 3 skills reales** y una allowlist por agente. Mide tu arranque en frío antes y después.
 5. **Haz un despacho real de principio a fin:** encargo → traspaso en las notas → export de la transcripción → borrado de la sesión.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/dispatch-dark.png">
+  <img src="assets/dispatch-light.png" alt="Un despacho de principio a fin: encargo con tarea y criterio de aceptación, trabajo en la sesión del proyecto, traspaso, export y cierre con un solo gerente">
+</picture>
 
 Las fases, criterios de aceptación y el checklist completo están en las secciones 8 y 16 del modelo.
 
@@ -65,6 +80,11 @@ Las versiones siguen `CHANGELOG.md`. Las lecciones genéricas se añaden en `les
 docs/
   model.md            edición en inglés
   es/modelo.md        edición en español
+assets/
+  banner-*.png        cabecera del README (claro / oscuro)
+  model-*.png         hub + islas (claro / oscuro)
+  dispatch-*.png      un despacho, de principio a fin (claro / oscuro)
+  social-preview.png  tarjeta social del repo (1280×640)
 templates/
   constitution.md     reglas siempre cargadas (≤200 líneas)
   agent.readonly.md   agente de solo lectura, sin shell

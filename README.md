@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.png">
+  <img src="assets/banner-light.png" alt="agent-hub-playbook — an operating model for AI assistants that coordinate work across projects">
+</picture>
+
 # agent-hub-playbook
 
 A practical operating model for AI assistants that coordinate real work across projects — and don't degrade as they grow.
@@ -21,6 +26,11 @@ It is not a framework. There is nothing to install. It is a specification, a set
 | **Lessons** | Date · error · root cause · action · status · evidence | An error that returns is a regression, not bad luck |
 | **Closure** | Measure context → consistency check → hand-off → rotation | A new session starts from a written state, not from re-reading history |
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/model-dark.png">
+  <img src="assets/model-light.png" alt="The hub dispatches a task with acceptance criteria to isolated project sessions; each session returns state and a lesson; contexts never mix while one manager is alive">
+</picture>
+
 The full specification — principles, phases, interview, anti-patterns, operating protocol, templates — is in **[docs/model.md](docs/model.md)** (English) and **[docs/es/modelo.md](docs/es/modelo.md)** (Spanish).
 
 ---
@@ -32,6 +42,11 @@ The full specification — principles, phases, interview, anti-patterns, operati
 3. **Create two agents** from the templates: one read-only explorer and one reviewer with no shell tool. Test that the reviewer literally cannot execute anything.
 4. **Add 3 real skills** and a per-agent allowlist. Measure your cold start before and after.
 5. **Do one real dispatch end-to-end:** assignment → hand-off in the project notes → transcript export → session deletion.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/dispatch-dark.png">
+  <img src="assets/dispatch-light.png" alt="One dispatch end to end: dispatch with task and acceptance criteria, work in the project session, hand-off, export, close with one manager left">
+</picture>
 
 Phases, acceptance criteria and the full checklist are in section 8 and section 16 of the model.
 
@@ -65,6 +80,11 @@ Releases follow `CHANGELOG.md`. Generic field lessons are added under `lessons/`
 docs/
   model.md            English edition
   es/modelo.md        Spanish edition
+assets/
+  banner-*.png        README header (light / dark)
+  model-*.png         hub + islands (light / dark)
+  dispatch-*.png      one dispatch, end to end (light / dark)
+  social-preview.png  repository social card (1280×640)
 templates/
   constitution.md     Always-loaded rules (≤200 lines)
   agent.readonly.md   Read-only agent with no shell tool
