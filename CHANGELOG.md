@@ -2,6 +2,12 @@
 
 All notable changes to this playbook. The model is versioned; field lessons are added as they are validated.
 
+## [Unreleased]
+
+- New field lesson `lessons/hub-project-boundary.md`: the hub executed a project's work in its own session; the boundary is now enforced on the hub side with a local role, hub-scoped permissions and a dispatch wrapper, with project-side isolation left as the recommended next layer.
+- New template `templates/dispatch-brief.md`: a machine-readable dispatch brief (`project`, `title`, `model`, `prompt_file`, `auto`, `dry_run`) with validation rules (absolute project, not the hub, prompt in the hub's dispatch folder, explicit model).
+- `templates/constitution.md` §3 now links the boundary lesson and the dispatch-brief template.
+
 ## [0.1.1] — 2026-10-19
 
 - Repository visuals under `assets/`: header banner, hub + islands diagram and dispatch lifecycle diagram (light/dark variants for `prefers-color-scheme`), plus a 1280×640 social preview card.
