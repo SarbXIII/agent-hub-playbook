@@ -29,8 +29,8 @@
 ## 3. Architecture
 
 - **Hub:** this assistant. Owns the personal context and dispatches work.
-- **Islands:** each project has its own session, notes and configuration. The hub may read state to coordinate; it never executes a project's work in its own session.
-- **Dispatch:** open a session in the project directory with an **explicit model**; assignment = task + acceptance criteria + what not to touch. The worker writes the hand-off, exports the transcript, and the session is deleted. One live manager only.
+- **Islands:** each project has its own session, notes and configuration. The hub may read state to coordinate; it never executes a project's work in its own session. The boundary is enforced, not just stated: a local role, hub-scoped permissions and a dispatch wrapper (field lesson: `lessons/hub-project-boundary.md`).
+- **Dispatch:** open a session in the project directory with an **explicit model**; assignment = task + acceptance criteria + what not to touch, written as a dispatch brief (`templates/dispatch-brief.md`). The worker writes the hand-off, exports the transcript, and the session is deleted. One live manager only.
 - **Agents:** deny-first permissions; readers have no shell tool; the expensive model thinks, the cheap one executes.
 - **Skills:** descriptions always visible, bodies on demand. Scope them per agent with an allowlist.
 
