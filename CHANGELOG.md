@@ -12,6 +12,11 @@ All notable changes to this playbook. The model is versioned; field lessons are 
 - New field lesson `lessons/hub-project-boundary.md`: the hub executed a project's work in its own session; the boundary is now enforced on the hub side with a local role, hub-scoped permissions and a dispatch wrapper, with project-side isolation left as the recommended next layer.
 - New template `templates/dispatch-brief.md`: a machine-readable dispatch brief (`project`, `title`, `model`, `prompt_file`, `auto`, `dry_run`) with validation rules (absolute project, not the hub, prompt in the hub's dispatch folder, explicit model).
 - `templates/constitution.md` §3 now links the boundary lesson and the dispatch-brief template.
+- New field lesson `lessons/one-writer-per-field.md`: three scripts wrote the same three state fields; the report then claimed ten packs were outdated minutes after updating them, a folder map was overwritten by a count, and a routine reindex destroyed most edges of a relation graph while still reporting `CHECK: PASS`. Adds the one-writer-per-field rule, a rebuild that cannot lose data, and provenance printing.
+- New field lesson `lessons/atomic-skill-update.md`: a two-rename folder swap is not atomic; a service restart landed between the renames and left an installed procedure with no real name. Adds an out-of-band integrity check, a recovery script that restores instead of merging, and a post-crash checklist.
+- New field lesson `lessons/phantom-message.md`: the assistant answered a user message that was never sent; the phrase existed only in its own output and reasoning. Adds an author check against the session store and a triage rule before acting on a message that does not fit the thread.
+- New template `templates/relation-registry.md`: a two-table index (records + typed edges with a mandatory reason) whose rebuild is non-destructive, plus an **evidence gate** — a proposed edge is accepted only if its reason cites a path, a record, or a session that exists. Written after 413 and 81 false edges were caught by sampling.
+- New template `templates/role-brain.md`: the fixed shape for a role skill (`SKILL.md` with five sections plus standards, skill map, checklists, lessons, sources) and the deterministic verifier that keeps three brains from drifting into three shapes.
 
 ## [0.1.1] — 2026-10-19
 

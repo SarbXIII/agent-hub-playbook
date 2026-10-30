@@ -90,12 +90,21 @@ templates/
   agent.readonly.md   Read-only agent with no shell tool
   agent.reviewer.md   Reviewer: finds issues, fixes nothing
   skill.md            On-demand procedure
+  role-brain.md       A skill that carries judgement for one kind of work
+  relation-registry.md  Index of records and edges, with an evidence gate
   memory.md           Dated facts, verified vs assumed
   lesson.md           Failure → machine change
   handoff.md          State + exact next step
 lessons/
   agent-shell-permissions.md
   context-budget.md
+  hub-project-boundary.md
+  self-imposed-restrictions.md
+  evaluating-tool-recommendations.md
+  worker-digest.md
+  one-writer-per-field.md
+  atomic-skill-update.md
+  phantom-message.md
 CHANGELOG.md
 LICENSE
 ```
@@ -107,6 +116,9 @@ LICENSE
 - **Shell allowlists match by substring** — `*git diff*` also runs `cmd /c "… & git push --force"`, and an agent allow **overrides the global deny**. Read-only agents must not have the tool at all.
 - **The skill catalogue is a cold-start tax** — 180+ announced skills ≈ 31k tokens before the first word; per-agent allowlists and `autoinvoke: false` bring it down.
 - **A guard is a tripwire, not a cage** — global deny lists stop the obvious; they do not stop a script that deletes from the inside, or copies out of a worktree.
+- **A field with two writers has no author** — three scripts overwrote the same state; reports kept claiming work was pending right after it was done, and a reindex silently deleted most of a relation graph while passing its own check.
+- **A folder swap has a window** — two renames are not one operation; a restart landed between them and left an installed procedure existing only as `.new` and `.old`.
+- **The window is not the transcript** — the assistant answered a message nobody sent; before acting on a message that does not fit, read the store and check the author.
 
 ---
 
