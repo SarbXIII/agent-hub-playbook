@@ -111,6 +111,9 @@ lessons/
   dead-client-is-not-a-finished-task.md
   baseline-that-cannot-fail.md
   guard-that-cannot-go-red.md
+  verdict-not-persisted.md
+  local-estimate-is-not-server-truth.md
+  quoted-error-is-not-a-failure.md
 README.md
 README.es.md
 CONTRIBUTING.md
