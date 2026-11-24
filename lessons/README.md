@@ -16,6 +16,8 @@ Generic, field-tested lessons. Each one follows the same discipline: **the error
 | [One writer per field](one-writer-per-field.md) | Several scripts writing the same state field make the report lie: give each field exactly one writer, and make rebuilds unable to lose data. |
 | [Phantom message](phantom-message.md) | An assistant can answer a message nobody sent: check the author against the session store before acting on a message that does not fit the thread. |
 | [Quoted error is not a failure](quoted-error-is-not-a-failure.md) | A string match counts mentions, not events: count shell-tool errors, not quotes, and treat expected denials as a separate case until they have their own rule. |
+| [Redirected logs can be UTF-16](redirected-logs-can-be-utf16.md) | A Windows PowerShell 5.1 redirect writes UTF-16 with a BOM that UTF-8 readers fail on: set the encoding at the write, guard every log, and normalise only files that carry a BOM. |
+| [Reserved device name is not a folder](reserved-device-name-is-not-a-folder.md) | `NUL`, `CON` and the other Windows device names are reserved in every folder: prefix fixtures and temporary folders, and never use a bare reserved name. |
 | [Self-imposed restrictions](self-imposed-restrictions.md) | A rule the agent writes for itself is code. Without its mechanics written and tested, it gets read as a broken tool. |
 | [Verdict that is not persisted](verdict-not-persisted.md) | A verdict the session store does not keep is invisible to the gate: close on a validated reviewer-text file with its hash, never on a verdict rebuilt from memory. |
 | [Worker digests](worker-digest.md) | Raw sources stay out of the reasoning context: a worker turns them into a small digest with paths, final state and open questions. |
