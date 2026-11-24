@@ -95,7 +95,10 @@ templates/
   memory.md           Dated facts, verified vs assumed
   lesson.md           Failure → machine change
   handoff.md          State + exact next step
+  dispatch-brief.md   Machine-readable brief for one dispatch, with validation rules
+  worker-digest.md    Digest contract for a worker's output
 lessons/
+  README.md           Index of the lessons below
   agent-shell-permissions.md
   context-budget.md
   hub-project-boundary.md
@@ -105,6 +108,12 @@ lessons/
   one-writer-per-field.md
   atomic-skill-update.md
   phantom-message.md
+  dead-client-is-not-a-finished-task.md
+  baseline-that-cannot-fail.md
+  guard-that-cannot-go-red.md
+README.md
+README.es.md
+CONTRIBUTING.md
 CHANGELOG.md
 LICENSE
 ```
