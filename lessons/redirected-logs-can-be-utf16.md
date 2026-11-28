@@ -46,3 +46,17 @@ The pattern has four steps.
 - The documentation is inconsistent on this point. The `about_Redirection` reference says the redirection operators use UTF8NoBOM, while the `Out-File` 5.1 reference gives `unicode` as the default. This lesson relies on the observed output and does not resolve the conflict.
 - That every offender came from a redirect. The origin of the 9 UTF-8-with-BOM files was not traced.
 - NUL bytes without a BOM and invalid UTF-8 are detected but not repaired; a person or the producing tool has to fix them.
+
+## Fifth recurrence (2026-11)
+
+The deterministic guard still did not exist, and the failure came back a fifth time. A diff written with `>` came out as UTF-16LE with a BOM (first bytes `FF FE`, 39,072 bytes). Another agent's native reader treated the file as binary, so it reviewed the final files and not the literal diff.
+
+The gap was on the artefact side. The hub's own reader already corrected BOMs, but newer readers do not sniff them. The rule is to fix the encoding at the write and keep the artefact, instead of trusting the reader:
+
+- Write through a route that sets the encoding: `cmd /c "… > path"` (the bytes come from the child program), the producing tool's own output option, or the no-BOM UTF-8 writer from the Action section.
+- Do not adopt `Out-File -Encoding utf8` or `Set-Content -Encoding utf8` until the guard has checked their output: a BOM would fail the check.
+- The normaliser stays limited to files that carry a BOM.
+
+Regenerated with `cmd /c "git diff -- … > path"`: first bytes `64 69 66 66` (UTF-8, `diff`), 29,475 bytes, 830 lines. The reviewer read the file, and round 2 returned ACCEPT.
+
+In Windows PowerShell 5.1, avoid `python -c` with quoted code: write a temporary script instead.
